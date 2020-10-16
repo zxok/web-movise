@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>白嫖电影</title>
+    <!--<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.js"></script>-->
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        const DATA_URL = "http://localhost:8080/maven_demo_war_exploded/ServletIndex";
+        //const DATA_URL = "https://gank.io/api/v2/data/category/Girl/type/Girl/page/1/count/10";
+        $(function () {
+            $.get(DATA_URL,function (root) {
+                let data = root.data;
+                debugger;
+                $("#root").text(root).show();
+                /*data.forEach(function (ele) {
+                    $("<div>" +
+                        "<p>"+ele.title+"</p>" +
+                        "<p>"+ele.desc+"</p>" +
+                        "<img src='"+ele.images+"' >" +
+                        "</div>").insertAfter($("#root"));
+                })*/
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="root" class="container-fluid"></div>
+</body>
+</html>
